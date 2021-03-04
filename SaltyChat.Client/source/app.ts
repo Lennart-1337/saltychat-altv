@@ -429,21 +429,19 @@ export class SaltyVoice {
                 let muffleIntensity = null;
                 if (Config.enableMuffling) {
                     let npRoomId = native.getRoomKeyFromEntity(nextPlayer.scriptID);
+
                     if (localRoomId != npRoomId && !native.hasEntityClearLosToEntity(alt.Player.local.scriptID, nextPlayer.scriptID, 17)) {
                         muffleIntensity = 10;
-                    }
-                    else {
+                    } else {
                         let pVehicle = alt.Player.local.vehicle;
                         let nVehicle = nextPlayer.vehicle;
                         if (pVehicle != nVehicle) {
-                            if ( pVehicle != null && !hasOpening(pVehicle))
-                                muffleIntensity += 4;
-                            if (nVehicle != null && !hasOpening(nVehicle))
-                                muffleIntensity += 4;
+                            if (pVehicle && !hasOpening(pVehicle)) muffleIntensity += 4;
+                            if (nVehicle && !hasOpening(nVehicle)) muffleIntensity += 4;
                         }
                     }
                 }
-                
+
                 playerStates.push(
                     new PlayerState(
                         voiceClient.teamSpeakName,

@@ -1,5 +1,10 @@
 export class RadioConfiguration {
-    constructor() {
-        this.volume = 1;
-    }
+    primaryChannel;
+    primaryChangeHandlerCookies;
+    secondaryChannel;
+    SecondaryChangeHandlerCookies;
+    volume = 1;
+    usingPrimaryRadio;
+    usingSecondaryRadio;
+    speakerEnabled;
 }

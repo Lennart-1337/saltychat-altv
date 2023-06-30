@@ -1,5 +1,17 @@
 export class GameInstance {
-    constructor(serverUniqueIdentifier, name, channelId, channelPassword, soundPack, swissChannels, sendTalkStates, sendRadioTrafficStates) {
+    serverUniqueIdentifier;
+    name;
+    channelId;
+    channelPassword;
+    soundPack;
+    swissChannelIds;
+    sendTalkStates;
+    sendRadioTrafficStates;
+    ultraShortRangeDistance;
+    shortRangeDistance;
+    longRangeDistance;
+    versionInfo = "1.2.1";
+    constructor(serverUniqueIdentifier, name, channelId, channelPassword, soundPack, swissChannels, sendTalkStates, sendRadioTrafficStates, rRangeUltraShort, rRangeShort, rRangeLong) {
         this.serverUniqueIdentifier = serverUniqueIdentifier;
         this.name = name;
         this.channelId = channelId;
@@ -8,5 +20,8 @@ export class GameInstance {
         this.swissChannelIds = swissChannels;
         this.sendTalkStates = sendTalkStates;
         this.sendRadioTrafficStates = sendRadioTrafficStates;
+        this.ultraShortRangeDistance = rRangeUltraShort;
+        this.shortRangeDistance = rRangeShort;
+        this.longRangeDistance = rRangeLong;
     }
 }
